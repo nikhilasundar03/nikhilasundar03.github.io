@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --neon-rose: #D45060;
+    --neon-gold: #D4AF37;
+    --neon-violet: #B8648A;
+    --neon-lime: #6B8F71;
+    --bg-base: #0A0A0B;
+    --bg-surface: #151315;
+    --bg-surface-light: #211D1F;
+    --text-primary: #F5F0EB;
+    --text-muted: #B5A99A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base text-text font-body;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(212,80,96,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(184,100,138,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(212,175,55,0.04) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgba(212, 80, 96, 0.25);
+    color: #FAF7F2;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0B;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(212, 80, 96, 0.2);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 80, 96, 0.4);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  .btn-neon {
+    @apply relative px-6 py-3 rounded-lg font-medium font-heading tracking-wide;
+    @apply border border-neon-rose/40 text-neon-rose;
+    @apply hover:border-neon-rose hover:shadow-neon-md;
+    @apply transition-all duration-300 ease-out;
+    @apply active:scale-95;
+  }
+
+  .btn-neon-fill {
+    @apply relative px-6 py-3 rounded-lg font-medium font-heading tracking-wide;
+    @apply bg-gradient-to-r from-neon-rose/40 to-neon-violet/35;
+    @apply border border-neon-rose/50 text-text-bright;
+    @apply hover:from-neon-rose/55 hover:to-neon-violet/50;
+    @apply hover:border-neon-rose hover:shadow-neon-md;
+    @apply transition-all duration-300 ease-out;
+    @apply active:scale-95;
+  }
+
+  .btn-neon-gold {
+    @apply relative px-6 py-3 rounded-lg font-medium font-heading tracking-wide;
+    @apply border border-neon-gold/40 text-neon-gold;
+    @apply hover:border-neon-gold hover:shadow-neon-gold-md;
+    @apply transition-all duration-300 ease-out;
+    @apply active:scale-95;
+  }
+
+  .card-neon {
+    @apply relative rounded-xl p-6;
+    @apply bg-surface/80 backdrop-blur-sm;
+    @apply border border-white/5;
+    @apply hover:border-neon-rose/20 hover:shadow-neon-sm;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-neon-interactive {
+    @apply card-neon;
+    @apply hover:bg-surface-light/80 hover:-translate-y-1;
+    @apply cursor-pointer;
+  }
+
+  .badge-neon {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-neon-rose/10 text-neon-rose border border-neon-rose/20;
+  }
+
+  .badge-neon-violet {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-neon-violet/10 text-neon-violet border border-neon-violet/20;
+  }
+
+  .badge-neon-gold {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    @apply bg-neon-gold/10 text-neon-gold border border-neon-gold/20;
+  }
+
+  .divider-neon {
+    @apply w-full h-px;
+    background: linear-gradient(90deg, transparent, var(--neon-rose), transparent);
+    opacity: 0.3;
+  }
+
+  .divider-neon-animated {
+    @apply w-full h-px;
+    background: linear-gradient(90deg, transparent, var(--neon-rose), var(--neon-violet), transparent);
+    background-size: 200% 100%;
+    animation: thread-flow 3s linear infinite;
+    opacity: 0.4;
+  }
+
+  .link-neon {
+    @apply text-neon-rose/80 hover:text-neon-rose;
+    @apply underline decoration-neon-rose/20 underline-offset-4;
+    @apply hover:decoration-neon-rose/60;
+    @apply transition-all duration-200;
+  }
+
+  .text-gradient-neon {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #D45060, #B8648A, #D4AF37);
+  }
+
+  .text-gradient-rose {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #D45060, #B8648A);
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .neon-glow-text {
+    text-shadow: 0 0 10px rgba(212, 80, 96, 0.5), 0 0 40px rgba(212, 80, 96, 0.2);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(212,80,96,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,80,96,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .brand-logo {
+    opacity: 0.75;
+    filter: saturate(0.7);
+    transition: all 0.3s ease-out;
+  }
+
+  .brand-logo:hover,
+  .group:hover .brand-logo,
+  .brand-strip-item:hover .brand-logo {
+    opacity: 1;
+    filter: saturate(1);
+  }
+
+  .brand-strip {
+    @apply flex items-center justify-center gap-8 md:gap-12 flex-wrap;
+  }
+
+  .brand-strip-item {
+    @apply flex flex-col items-center gap-2;
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .brand-strip-item:hover {
+    transform: scale(1.1);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+}

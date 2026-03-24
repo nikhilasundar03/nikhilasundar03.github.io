@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const projects = allProjects.sort((a, b) => b.data.date.localeCompare(a.data.date));
+
+const categories = ['all', ...new Set(projects.map(p => p.data.category))];
+
+const categoryLabels: Record<string, string> = {
+  'all': 'All',
+  'research': 'Research',
+  'ml-ai': 'ML / AI',
+  'full-stack': 'Full-Stack',
+  'devops': 'DevOps',
+  'open-source': 'Open Source',
+};
+---
+
+<Layout title="Projects — Dhairya Mishra" description="Research and production projects spanning ML, full-stack, and cloud systems.">
+  <Navigation />
+  
+  <main id="main-content" class="py-20 md:py-28">
+    <section class="section-container">
+      <!-- Header -->
+      <div class="mb-14">
+        <p class="text-neon-rose font-mono text-sm tracking-widest uppercase mb-4 animate-fade-in">Portfolio</p>
+        <h1 class="text-4xl md:text-5xl font-heading font-bold mb-4">
+          <span class="text-gradient-neon">Projects</span>
+        </h1>
+        <p class="text-lg text-muted-light max-w-2xl">
+          Research and production work spanning ML, full-stack systems, and cloud infrastructure. Each project includes a detailed write-up.
+        </p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="flex flex-wrap gap-2 mb-10" id="filter-bar">
+        {categories.map((cat) => (
+          <button
+            data-filter={cat}
+            class={`filter-btn px-4 py-2 rounded-full text-xs font-heading font-medium tracking-wide border transition-all duration-200 ${
+              cat === 'all'
+                ? 'bg-neon-rose/15 text-neon-rose border-neon-rose/30'
+                : 'bg-transparent text-muted border-white/10 hover:border-white/20 hover:text-text'
+            }`}
+          >
+            {categoryLabels[cat] || cat}
+          </button>
+        ))}
+      </div>
+      
+      <!-- Project Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
+        {projects.map((project, i) => (
+          <ProjectCard
+            project={project}
+            maxTags={5}
+            showReadMore
+            revealClass={`reveal reveal-delay-${(i % 5) + 1}`}
+            extraClass="project-card"
+          />
+        ))}
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      buttons.forEach(b => {
+        b.classList.remove('bg-neon-rose/15', 'text-neon-rose', 'border-neon-rose/30');
+        b.classList.add('bg-transparent', 'text-muted', 'border-white/10');
+      });
+      btn.classList.remove('bg-transparent', 'text-muted', 'border-white/10');
+      btn.classList.add('bg-neon-rose/15', 'text-neon-rose', 'border-neon-rose/30');
+
+      cards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          (card as HTMLElement).style.display = '';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
