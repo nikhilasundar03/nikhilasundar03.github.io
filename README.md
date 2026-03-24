@@ -1,8 +1,12 @@
-# dhairyamishra.github.io
+# nikhilasundar.github.io
 
-Personal portfolio website — fully static, hosted on GitHub Pages.
+Personal portfolio website for **Nikhila Sundar** — fully static, hosted on GitHub Pages.
 
-**Live:** [dhairyamishra.github.io](https://dhairyamishra.github.io)
+**Live:** [nikhilasundar.github.io](https://nikhilasundar.github.io)
+
+## About
+
+Nikhila is a Computer Science M.S. student at **New York University** (AI concentration, graduating Dec 2026) with a B.S. in Computer Science from **Rutgers University - New Brunswick**. Her experience spans full-stack development, cloud services, AI/ML, and mobile applications.
 
 ## Tech Stack
 
@@ -45,8 +49,8 @@ Workflow: `.github/workflows/deploy.yml`
 │   ├── src/
 │   │   ├── components/        # Navigation, Footer, ContactForm
 │   │   ├── content/
-│   │   │   ├── projects/      # Project markdown files (8)
-│   │   │   ├── experience/    # Experience markdown files (3)
+│   │   │   ├── projects/      # Project markdown files (6)
+│   │   │   ├── experience/    # Experience markdown files (4)
 │   │   │   └── config.ts      # Collection schemas
 │   │   ├── layouts/           # Layout.astro
 │   │   ├── pages/             # index, about, projects, contact
@@ -61,6 +65,28 @@ Workflow: `.github/workflows/deploy.yml`
 └── README.md
 ```
 
+## Content
+
+### Projects (6)
+
+| Project | Description |
+|---------|-------------|
+| Stock Market Tracker | Real-time price-alert program with interactive search, threshold alerts, and buy/sell algorithm |
+| Pico LLM | PyTorch pipeline for K-gram MLPs, LSTMs, and Transformers with structured logging and automated analysis |
+| Pizza Store Application | Android app in Java replicating an online pizza store platform |
+| Time Series Forecaster | Meta Prophet-based forecasting using dates and anomalies — won Rutgers Datathon Fall 2023 |
+| Banking Platform | Java program simulating an online banking platform with deposits, withdrawals, and account management |
+| Facial Expression Predictor | Neural network that processes and predicts facial expressions |
+
+### Experience (4)
+
+| Role | Company | Period |
+|------|---------|--------|
+| CS112 Grader | Rutgers University | Jan 2023 – Dec 2024 |
+| Technology Intern | Fiserv | Jun 2024 – Aug 2024 |
+| Intern (OCR) | East Consultancy Services | Jun 2023 – Aug 2023 |
+| Coding Instructor | Code Ninjas | Mar 2020 – Jun 2021 |
+
 ## Adding a Project
 
 1. Create a new `.md` file in `apps/web/src/content/projects/`
@@ -73,9 +99,10 @@ Workflow: `.github/workflows/deploy.yml`
 ## Setup Notes
 
 - **Web3Forms:** Replace `YOUR_WEB3FORMS_ACCESS_KEY` in `ContactForm.tsx` with your key from [web3forms.com](https://web3forms.com)
-- **GitHub Pages:** Repo must be named `dhairyamishra.github.io` and Pages source set to "GitHub Actions" in repo settings
+- **GitHub Pages:** Repo must be named `nikhilasundar.github.io` and Pages source set to "GitHub Actions" in repo settings
 
 ## Contact
 
-- **LinkedIn:** [dhairya-mishra](https://linkedin.com/in/dhairya-mishra/)
-- **GitHub:** [dhairyamishra](https://github.com/dhairyamishra)
+- **Email:** nikhilasundar03@gmail.com
+- **LinkedIn:** [nikhilasundar](https://linkedin.com/in/nikhilasundar/)
+- **GitHub:** [nikhilasundar](https://github.com/nikhilasundar)
