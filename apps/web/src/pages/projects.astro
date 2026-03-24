@@ -12,15 +12,14 @@ const categories = ['all', ...new Set(projects.map(p => p.data.category))];
 
 const categoryLabels: Record<string, string> = {
   'all': 'All',
-  'research': 'Research',
   'ml-ai': 'ML / AI',
   'full-stack': 'Full-Stack',
-  'devops': 'DevOps',
-  'open-source': 'Open Source',
+  'mobile': 'Mobile',
+  'data-science': 'Data Science',
 };
 ---
 
-<Layout title="Projects — Dhairya Mishra" description="Research and production projects spanning ML, full-stack, and cloud systems.">
+<Layout title="Projects — Nikhila Sundar" description="Projects spanning AI/ML, data science, full-stack, and mobile development.">
   <Navigation />
   
   <main id="main-content" class="py-20 md:py-28">
@@ -32,7 +31,7 @@ const categoryLabels: Record<string, string> = {
           <span class="text-gradient-neon">Projects</span>
         </h1>
         <p class="text-lg text-muted-light max-w-2xl">
-          Research and production work spanning ML, full-stack systems, and cloud infrastructure. Each project includes a detailed write-up.
+          Coursework and personal projects spanning AI/ML, data science, full-stack development, and mobile applications.
         </p>
       </div>
 

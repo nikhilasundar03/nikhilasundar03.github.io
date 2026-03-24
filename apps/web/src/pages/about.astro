@@ -6,19 +6,20 @@ import BrandLogo from '../components/BrandLogo.astro';
 import { getCollection } from 'astro:content';
 import { skills } from '../data/skills';
 import { education } from '../data/education';
-import { publications } from '../data/publications';
+import { achievements } from '../data/publications';
 
 const allExperience = await getCollection('experience');
 const experience = allExperience.sort((a, b) => a.data.order - b.data.order);
 
 const companyBrand: Record<string, string> = {
-  'CVS Health': 'cvs',
-  'Aetna Health': 'aetna',
-  'Evidenza': 'evidenza',
+  'Rutgers University': 'rutgers',
+  'Fiserv': 'fiserv',
+  'East Consultancy Services': 'eastconsultancy',
+  'Code Ninjas': 'codeninjas',
 };
 ---
 
-<Layout title="About — Dhairya Mishra" description="Software Engineer with 6+ years building AI/ML production systems. NYU Courant M.S. CS (AI).">
+<Layout title="About — Nikhila Sundar" description="Computer Science M.S. student at NYU specializing in AI. Rutgers CS graduate with experience in software engineering and data science.">
   <Navigation />
   
   <main id="main-content" class="py-20 md:py-28">
@@ -26,24 +27,26 @@ const companyBrand: Record<string, string> = {
     <section class="section-container mb-20">
       <div class="max-w-4xl flex flex-col md:flex-row md:items-center md:gap-12">
         <div class="flex-shrink-0 mb-8 md:mb-0 md:order-2">
+          <!-- [PLACEHOLDER] Add profile.jpg to public/ folder -->
           <img
             src="/profile.jpg"
-            alt="Dhairya Mishra"
+            alt="Nikhila Sundar"
             class="w-48 h-48 md:w-56 md:h-56 rounded-2xl object-cover border-2 border-neon-rose/30 shadow-[0_0_25px_rgba(212,80,96,0.15)] mx-auto"
           />
         </div>
         <div class="flex-1">
           <p class="text-neon-rose font-mono text-sm tracking-widest uppercase mb-4 animate-fade-in">About Me</p>
           <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6">
-            <span class="text-gradient-neon">Software Engineer</span>
+            <span class="text-gradient-neon">CS Graduate Student</span>
             <br />
-            <span class="text-text-bright">& ML Researcher</span>
+            <span class="text-text-bright">& Software Developer</span>
           </h1>
           <p class="text-lg text-muted-light leading-relaxed mb-4">
-            Software Engineer with 6+ years of experience building and deploying AI/ML production systems at scale — multimodal pipelines, LLM tooling, and distributed data infrastructure serving millions. Skilled in computer vision, NLP, cloud automation, CI/CD, and reliability-oriented orchestration, with hands-on big-data processing for large-scale ETL and backfills.
+            Computer Science M.S. student at <span class="text-neon-rose">New York University</span> with a concentration in Artificial Intelligence. Rutgers University B.S. CS graduate with hands-on experience in Java, Python, AI/ML, Spring Boot, AWS, and Android development. Passionate about building impactful software and exploring the frontiers of machine learning.
+            <!-- [PLACEHOLDER] Personalize this bio further -->
           </p>
           <p class="text-lg text-muted-light leading-relaxed">
-            Co-author on peer-reviewed multi-agent video world model research at <span class="text-neon-rose">NYU Courant</span> (ICML 2026 submission).
+            Winner of the Rutgers Data Science Club's Fall 2023 Datathon for most advanced/unique algorithm. Recipient of the <span class="text-neon-rose">NCWIT Award for Aspirations in Computing</span> — Certificate of Distinction.
           </p>
         </div>
       </div>
@@ -97,32 +100,32 @@ const companyBrand: Record<string, string> = {
 
     <div class="divider-neon-animated"></div>
 
-    <!-- Publications & Talks -->
+    <!-- Achievements & Awards -->
     <section class="section-container py-20 md:py-28">
       <div class="reveal text-center mb-14">
         <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
-          Publications & <span class="text-gradient-rose">Talks</span>
+          Achievements & <span class="text-gradient-rose">Awards</span>
         </h2>
       </div>
       
       <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-        {publications.map((pub, i) => (
+        {achievements.map((item, i) => (
           <div class={`reveal reveal-delay-${i + 1} card-neon group`}>
             <div class="flex items-start gap-3 mb-3">
-              <div class="w-10 h-10 rounded-lg bg-neon-violet/10 border border-neon-violet/20 flex items-center justify-center flex-shrink-0">
-                <BrandLogo brand={pub.venueBrand} size="sm" />
+              <div class="w-10 h-10 rounded-lg bg-neon-gold/10 border border-neon-gold/20 flex items-center justify-center flex-shrink-0">
+                <BrandLogo brand={item.venueBrand} size="sm" />
               </div>
               <div>
-                <h3 class="font-heading font-semibold text-text-bright text-sm">{pub.title}</h3>
-                <p class="text-xs text-neon-rose/70 mt-1">{pub.venue}</p>
+                <h3 class="font-heading font-semibold text-text-bright text-sm">{item.title}</h3>
+                <p class="text-xs text-neon-rose/70 mt-1">{item.venue}</p>
               </div>
             </div>
             <div class="flex items-center gap-3 text-xs text-muted">
-              <span>{pub.role}</span>
+              <span>{item.role}</span>
               <span class="text-white/10">|</span>
-              <span>{pub.institution}</span>
+              <span>{item.institution}</span>
               <span class="text-white/10">|</span>
-              <span>{pub.date}</span>
+              <span>{item.date}</span>
             </div>
           </div>
         ))}

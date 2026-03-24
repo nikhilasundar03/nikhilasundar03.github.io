@@ -5,10 +5,10 @@ export interface SkillGroup {
 }
 
 export const skills: SkillGroup[] = [
-  { category: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'Java', 'C++', 'SQL', 'HTML/CSS'], color: 'rose' },
-  { category: 'ML / AI', items: ['PyTorch', 'TensorFlow', 'Hugging Face', 'scikit-learn', 'OpenCV', 'RAG', 'ChromaDB', 'FAISS', 'wandb'], color: 'gold' },
-  { category: 'Cloud & DevOps', items: ['EC2', 'S3', 'Lambda', 'GKE', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'Jenkins', 'ArgoCD', 'PM2'], color: 'violet' },
-  { category: 'Frameworks & App Dev', items: ['FastAPI', 'React', 'Astro', 'Vite', 'TailwindCSS', 'Streamlit', 'Uvicorn', 'Zustand', 'React Flow'], color: 'rose' },
-  { category: 'Data & Storage', items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Pandas', 'NumPy', 'Spark', 'HDFS', 'REST APIs'], color: 'gold' },
-  { category: 'Testing & Observability', items: ['OpenTelemetry', 'Grafana', 'Prometheus', 'Elastic Stack', 'Playwright', 'pytest', 'Pydantic'], color: 'violet' },
+  { category: 'Languages', items: ['Java', 'Python', 'C', 'C++', 'SQL'], color: 'rose' },
+  { category: 'AI / ML', items: ['PyTorch', 'Prophet', 'LLM Agents', 'Neural Networks', 'Computer Vision', 'NLP'], color: 'gold' },
+  { category: 'Frameworks & Tools', items: ['Spring Boot', 'Android Development', 'Git', 'REST APIs'], color: 'violet' },
+  { category: 'Cloud & Infrastructure', items: ['AWS (S3, SQS)', 'Docker'], color: 'rose' },
+  { category: 'Data & Databases', items: ['SQL', 'Data Structures', 'Time Series Analysis', 'Pandas'], color: 'gold' },
+  { category: 'Interests', items: ['SWE', 'Data Science', 'AI/ML Development', 'Mobile App Development', 'Cloud Computing', 'AI Agents'], color: 'violet' },
 ];

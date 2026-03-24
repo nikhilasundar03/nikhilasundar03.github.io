@@ -23,71 +23,37 @@ const logos: Record<string, string> = {
     </g>
   </svg>`,
 
-  trine: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 2L28 9v10c0 5-5 9-12 11C5 28 2 24 2 19V9l14-7z" stroke="#3D5A80" stroke-width="1.5" fill="#3D5A80" fill-opacity="0.1"/>
-    <path d="M10 11h12v3h-4.5v10h-3V14H10v-3z" fill="#C4A035"/>
+  rutgers: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="13" stroke="#CC0033" stroke-width="1.5" fill="#CC0033" fill-opacity="0.1"/>
+    <path d="M10 11h5c2.2 0 3.5 1.2 3.5 3s-1.3 3-3.5 3h-2l4 5h-3l-4-5v5h-2V11h2zm2 2v3h3c1 0 1.5-.6 1.5-1.5S16 13 15 13h-3z" fill="#CC0033"/>
   </svg>`,
 
-  icml: `<svg viewBox="0 0 99.264 97.665" xmlns="http://www.w3.org/2000/svg">
-    <defs><clipPath id="icml-clip" clipPathUnits="userSpaceOnUse"><path d="M 0,108 H 216 V 0 H 0 Z"/></clipPath></defs>
-    <g transform="matrix(1.3333333,0,0,-1.3333333,-9.4037331,115.5584)">
-      <g>
-        <rect fill="#231f20" width="8.614" height="8.845" x="51.122" y="-77.901" transform="scale(1,-1)"/>
-        <rect fill="#231f20" width="7.768" height="7.537" x="55.89" y="-63.635" transform="scale(1,-1)"/>
-        <rect fill="#231f20" width="4.691" height="4.615" x="60.543" y="-70.672" transform="scale(1,-1)"/>
-        <rect fill="#231f20" width="12.229" height="12.69" x="43.2" y="-57.251" transform="scale(1,-1)"/>
-        <g clip-path="url(#icml-clip)">
-          <g transform="translate(4.5,-4.5)">
-            <g transform="translate(25.2256,57.9727)"><path fill="#94d222" d="m 0,0 c 0,-0.682 -0.553,-1.235 -1.235,-1.235 h -8.4 c -0.682,0 -1.236,0.553 -1.236,1.235 v 8.4 c 0,0.683 0.554,1.236 1.236,1.236 h 8.4 C -0.553,9.636 0,9.083 0,8.4 Z"/></g>
-            <g transform="translate(35.6738,68.8438)"><path fill="#2a419e" d="m 0,0 c 0,-0.682 -0.554,-1.235 -1.235,-1.235 h -7.11 c -0.682,0 -1.236,0.553 -1.236,1.235 v 7.11 c 0,0.682 0.554,1.235 1.236,1.235 h 7.11 C -0.554,8.345 0,7.792 0,7.11 Z"/></g>
-            <g transform="translate(23.3193,75.0635)"><path fill="#ed1e24" d="m 0,0 c 0,-0.683 -0.553,-1.235 -1.234,-1.235 h -4.924 c -0.682,0 -1.236,0.552 -1.236,1.235 v 4.923 c 0,0.682 0.554,1.236 1.236,1.236 h 4.924 C -0.553,6.159 0,5.605 0,4.923 Z"/></g>
-            <g transform="translate(12.9688,69.1479)"><path fill="#f79011" d="M 0,0 C 0,-0.682 -0.554,-1.235 -1.236,-1.235 H -4.68 c -0.682,0 -1.236,0.553 -1.236,1.235 v 3.444 c 0,0.683 0.554,1.236 1.236,1.236 h 3.444 C -0.554,4.68 0,4.127 0,3.444 Z"/></g>
-            <g transform="translate(60.2002,72.3828)"><path fill="#f9f9f9" d="m 0,0 c 0,-0.682 -0.554,-1.235 -1.235,-1.235 h -1.412 c -0.682,0 -1.236,0.553 -1.236,1.235 v 1.412 c 0,0.682 0.554,1.234 1.236,1.234 h 1.412 C -0.554,2.646 0,2.094 0,1.412 Z m -1.479,-10.26 c 0,-0.682 -0.553,-1.235 -1.236,-1.235 h -4.553 c -0.682,0 -1.236,0.553 -1.236,1.235 v 4.554 c 0,0.683 0.554,1.236 1.236,1.236 h 4.553 c 0.683,0 1.236,-0.553 1.236,-1.236 z m -8.596,-10.629 c 0,-0.681 -0.554,-1.235 -1.236,-1.235 h -8.159 c -0.681,0 -1.234,0.554 -1.234,1.235 v 8.159 c 0,0.682 0.553,1.235 1.234,1.235 h 8.159 c 0.682,0 1.236,-0.553 1.236,-1.235 z m -2.033,27.753 c 0,0.683 0.552,1.236 1.234,1.236 h 2.983 c 0.682,0 1.236,-0.553 1.236,-1.236 V 3.882 c 0,-0.682 -0.554,-1.236 -1.236,-1.236 h -2.983 c -0.682,0 -1.234,0.554 -1.234,1.236 z M 10.446,-13.423 C 9.674,-13.81 9.48,-14.003 9.48,-12.94 v 6.275 c 0,1.452 0.548,20.951 -21.916,20.951 -6.089,0 -11.648,-1.545 -11.648,-2.994 0,-1.448 -0.033,-3.475 -0.033,-4.634 0,-1.244 0.675,-1.852 1.641,-1.852 h 5.6 c 0.677,0 1.737,-0.071 1.737,-1.265 v -6.248 c 0,-1.641 -0.809,-1.858 -1.678,-1.858 h -5.792 c -0.869,0 -1.702,-0.459 -1.702,-1.521 v -5.873 c 0,-0.854 -0.385,-1.561 -1.64,-1.561 h -5.813 c -0.772,0 -1.606,-0.964 -1.606,-2.412 0,-1.448 -0.016,-4.443 -0.016,-5.312 0,-0.869 -0.772,-0.772 -2.703,-0.772 0,0 0,-2.799 1.255,-5.986 0.671,-1.704 1.738,-2.123 3.572,-1.544 0,0 0.222,-4.619 1.284,-7.515 1.062,-2.896 1.999,-4.748 4.992,-6.871 2.994,-2.125 3.283,-2.704 5.31,-4.345 2.027,-1.642 2.896,-3.186 8.014,-3.186 5.213,0 6.468,2.027 8.592,4.151 2.124,2.125 4.56,2.207 7.53,6.663 2.511,3.765 2.647,6.812 2.993,11.2 0,0 2.704,-1.352 3.573,1.351 0.532,1.657 2.123,9.075 2.703,13.033 0.579,3.959 -2.51,2.028 -3.283,1.642"/></g>
-          </g>
-        </g>
-      </g>
-    </g>
+  fiserv: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="8" width="24" height="16" rx="3" stroke="#FF6600" stroke-width="1.5" fill="#FF6600" fill-opacity="0.1"/>
+    <path d="M10 14h5" stroke="#FF6600" stroke-width="2" stroke-linecap="round"/>
+    <path d="M10 18h8" stroke="#FF6600" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="23" cy="14" r="2" fill="#FF6600" fill-opacity="0.5"/>
   </svg>`,
 
-  acm: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 3L29 16L16 29L3 16Z" stroke="#2E86C1" stroke-width="1.5" fill="#2E86C1" fill-opacity="0.1"/>
-    <path d="M16 8L24 16L16 24L8 16Z" stroke="#2E86C1" stroke-width="1" fill="#2E86C1" fill-opacity="0.08"/>
+  ncwit: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 4l10 6v12l-10 6L6 22V10l10-6z" stroke="#6A3D9A" stroke-width="1.5" fill="#6A3D9A" fill-opacity="0.1"/>
+    <path d="M12 14l3 3 5-6" stroke="#6A3D9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`,
 
-  cvs: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 28C7.6 21 4 17.5 4 13a6 6 0 0112 0 6 6 0 0112 0c0 4.5-3.6 8-12 15z" fill="#C04040" opacity="0.85"/>
+  codeninjas: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="14" r="8" stroke="#E84D39" stroke-width="1.5" fill="#E84D39" fill-opacity="0.1"/>
+    <path d="M12 13l2 2-2 2" stroke="#E84D39" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18 17h3" stroke="#E84D39" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M10 24c1-3 3.5-4 6-4s5 1 6 4" stroke="#E84D39" stroke-width="1.5" stroke-linecap="round"/>
   </svg>`,
 
-  aetna: `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 28L2.5 15.5L6 5.5L16 13L26 5.5L29.5 15.5Z" fill="#7D3F98"/>
-    <path d="M16 13L6 5.5L2.5 15.5L12.5 19.5Z" fill="#6A3188"/>
+  eastconsultancy: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="6" y="6" width="20" height="20" rx="4" stroke="#2E7D32" stroke-width="1.5" fill="#2E7D32" fill-opacity="0.1"/>
+    <path d="M11 12h10M11 16h7M11 20h10" stroke="#2E7D32" stroke-width="1.5" stroke-linecap="round"/>
   </svg>`,
 
-  evidenza: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M10 7v18" stroke="#2D9B83" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M10 7h13" stroke="#2D9B83" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M10 16h11" stroke="#2D9B83" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M10 25h13" stroke="#2D9B83" stroke-width="2.5" stroke-linecap="round"/>
-  </svg>`,
-
-  arxiv: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 6l16 20" stroke="#B84040" stroke-width="2.5" stroke-linecap="round"/>
-    <path d="M24 6L8 26" stroke="#B84040" stroke-width="2.5" stroke-linecap="round"/>
-    <circle cx="16" cy="16" r="2" fill="#B84040" opacity="0.4"/>
-  </svg>`,
-
-  solaris: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="16" cy="16" r="5.5" fill="#D4A017" opacity="0.85"/>
-    <g stroke="#D4A017" stroke-width="2" stroke-linecap="round" opacity="0.65">
-      <line x1="16" y1="2" x2="16" y2="7"/>
-      <line x1="16" y1="25" x2="16" y2="30"/>
-      <line x1="2" y1="16" x2="7" y2="16"/>
-      <line x1="25" y1="16" x2="30" y2="16"/>
-      <line x1="6.1" y1="6.1" x2="9.6" y2="9.6"/>
-      <line x1="22.4" y1="22.4" x2="25.9" y2="25.9"/>
-      <line x1="6.1" y1="25.9" x2="9.6" y2="22.4"/>
-      <line x1="22.4" y1="9.6" x2="25.9" y2="6.1"/>
-    </g>
+  datathon: `<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 4l3 6h7l-5.5 4.5 2 7L16 17l-6.5 4.5 2-7L6 10h7l3-6z" fill="#D4AF37" fill-opacity="0.85"/>
   </svg>`,
 };
 

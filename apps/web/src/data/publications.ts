@@ -1,4 +1,4 @@
-export interface Publication {
+export interface Achievement {
   title: string;
   venue: string;
   role: string;
@@ -7,21 +7,21 @@ export interface Publication {
   venueBrand: string;
 }
 
-export const publications: Publication[] = [
+export const achievements: Achievement[] = [
   {
-    title: 'Solaris: Multi-Agent Video World Models',
-    venue: 'ICML 2026 (Submission)',
-    role: 'Researcher/Developer',
-    institution: 'NYU Courant',
-    date: 'Sep 2025 – Present',
-    venueBrand: 'icml',
+    title: 'Most Advanced/Unique Algorithm and Code Overall',
+    venue: 'Rutgers Data Science Club Fall 2023 Datathon',
+    role: 'Winner',
+    institution: 'Rutgers University',
+    date: '2023',
+    venueBrand: 'datathon',
   },
   {
-    title: 'Testaro: Web Accessibility Testing Framework',
-    venue: 'ACM SIGACCESS ASSETS 2023',
-    role: 'Speaker/Contributor',
-    institution: 'CVS Health',
-    date: 'Oct 2023',
-    venueBrand: 'acm',
+    title: 'NCWIT Award for Aspirations in Computing — Certificate of Distinction',
+    venue: 'National Center for Women in Information Technology',
+    role: 'Recipient',
+    institution: 'NCWIT',
+    date: '2021',
+    venueBrand: 'ncwit',
   },
 ];

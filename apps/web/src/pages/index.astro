@@ -18,64 +18,61 @@ const allExperience = await getCollection('experience');
 const experience = allExperience.sort((a, b) => a.data.order - b.data.order);
 
 const stats = [
-  { value: '6+', label: 'Years Experience' },
-  { value: '8+', label: 'Projects Shipped' },
-  { value: 'NYU', label: 'Courant M.S. CS' },
-  { value: 'ICML', label: '2026 Submission' },
+  { value: 'NYU', label: 'M.S. CS (AI)' },
+  { value: '6+', label: 'Projects Built' },
+  { value: '1st', label: 'Datathon Winner' },
+  { value: 'NCWIT', label: 'Award Recipient' },
 ];
 
 const affiliations = [
-  { brand: 'nyu', label: 'NYU Courant' },
-  { brand: 'trine', label: 'Trine University' },
-  { brand: 'cvs', label: 'CVS Health' },
-  { brand: 'aetna', label: 'Aetna' },
-  { brand: 'evidenza', label: 'Evidenza' },
-  { brand: 'acm', label: 'ACM' },
-  { brand: 'icml', label: 'ICML' },
-  { brand: 'arxiv', label: 'arXiv' },
+  { brand: 'nyu', label: 'NYU' },
+  { brand: 'rutgers', label: 'Rutgers University' },
+  { brand: 'fiserv', label: 'Fiserv' },
+  { brand: 'ncwit', label: 'NCWIT' },
+  { brand: 'codeninjas', label: 'Code Ninjas' },
 ];
 
 const companyBrand: Record<string, string> = {
-  'CVS Health': 'cvs',
-  'Aetna Health': 'aetna',
-  'Evidenza': 'evidenza',
+  'Rutgers University': 'rutgers',
+  'Fiserv': 'fiserv',
+  'East Consultancy Services': 'eastconsultancy',
+  'Code Ninjas': 'codeninjas',
 };
 ---
 
-<Layout title="Dhairya Mishra — Software Engineer & ML Researcher">
+<Layout title="Nikhila Sundar — CS Graduate Student & Software Developer">
   <Navigation />
   
   <main id="main-content">
     <!-- Hero Section -->
     <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      <!-- Grid background -->
       <div class="absolute inset-0 grid-bg opacity-40"></div>
-      <!-- Gradient orbs -->
       <div class="absolute top-1/4 -left-32 w-96 h-96 bg-neon-rose/5 rounded-full blur-3xl"></div>
       <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-neon-gold/5 rounded-full blur-3xl"></div>
 
       <div class="section-container relative z-10 text-center py-20">
         <div class="flex flex-col md:flex-row md:items-center md:justify-center md:gap-10 mb-6">
           <div class="animate-fade-in md:order-2 flex-shrink-0 mb-6 md:mb-0">
+            <!-- [PLACEHOLDER] Add profile.jpg to public/ folder -->
             <img
               src="/profile.jpg"
-              alt="Dhairya Mishra"
+              alt="Nikhila Sundar"
               class="w-36 h-36 md:w-44 md:h-44 rounded-2xl object-cover border-2 border-neon-rose/30 shadow-[0_0_20px_rgba(212,80,96,0.15)] mx-auto"
             />
           </div>
           <div class="animate-fade-in md:text-left">
-            <p class="text-neon-rose font-mono text-sm tracking-widest uppercase mb-6">Software Engineer &middot; ML Researcher</p>
+            <p class="text-neon-rose font-mono text-sm tracking-widest uppercase mb-6">CS Graduate Student &middot; Software Developer</p>
             <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-heading font-bold leading-tight">
-              <span class="text-gradient-neon">Dhairya</span>
+              <span class="text-gradient-neon">Nikhila</span>
               <br />
-              <span class="text-text-bright">Mishra</span>
+              <span class="text-text-bright">Sundar</span>
             </h1>
           </div>
         </div>
         
         <p class="text-lg md:text-xl text-muted-light max-w-2xl mx-auto mb-10 leading-relaxed">
-          Building and deploying AI/ML production systems at scale — multimodal pipelines, LLM tooling, and distributed data infrastructure. 
-          6+ years shipping computer vision, NLP, and cloud-native services.
+          Computer Science M.S. student at NYU specializing in Artificial Intelligence. Passionate about software engineering, data science, AI/ML development, and building impactful applications.
+          <!-- [PLACEHOLDER] Personalize this bio further -->
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -124,7 +121,7 @@ const companyBrand: Record<string, string> = {
           <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
             Featured <span class="text-gradient-rose">Projects</span>
           </h2>
-          <p class="text-muted max-w-lg mx-auto">Research and production work spanning ML, full-stack, and cloud systems.</p>
+          <p class="text-muted max-w-lg mx-auto">Coursework and personal projects spanning AI/ML, data science, and full-stack development.</p>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -155,7 +152,7 @@ const companyBrand: Record<string, string> = {
           <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">
             Skills & <span class="text-gradient-rose">Technologies</span>
           </h2>
-          <p class="text-muted max-w-lg mx-auto">Full-stack proficiency across ML/AI, cloud infrastructure, and modern web frameworks.</p>
+          <p class="text-muted max-w-lg mx-auto">Proficiency across programming languages, AI/ML frameworks, cloud infrastructure, and application development.</p>
         </div>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -195,7 +192,6 @@ const companyBrand: Record<string, string> = {
         </div>
         
         <div class="relative max-w-3xl mx-auto">
-          <!-- Vertical thread line -->
           <div class="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-neon-rose/40 via-neon-violet/30 to-transparent"></div>
           
           {experience.map((exp, i) => (
@@ -272,14 +268,15 @@ const companyBrand: Record<string, string> = {
       <div class="section-container text-center">
         <div class="reveal card-neon max-w-2xl mx-auto py-12 px-8">
           <h2 class="text-2xl md:text-3xl font-heading font-bold mb-4">
-            Let's <span class="text-gradient-rose">Build</span> Something
+            Let's <span class="text-gradient-rose">Connect</span>
           </h2>
           <p class="text-muted mb-8 max-w-md mx-auto">
-            Interested in collaborating on ML research, full-stack systems, or production AI? I'd love to hear from you.
+            Interested in collaborating on software projects, AI/ML research, or data science? I'd love to hear from you.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" class="btn-neon-fill">Get in Touch</a>
-            <a href="https://github.com/dhairyamishra" target="_blank" rel="noopener noreferrer" class="btn-neon">
+            <!-- [PLACEHOLDER] Update GitHub URL -->
+            <a href="https://github.com/nikhilasundar" target="_blank" rel="noopener noreferrer" class="btn-neon">
               <svg class="inline-block w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
               View GitHub
             </a>

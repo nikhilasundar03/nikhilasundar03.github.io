@@ -14,7 +14,7 @@ const projects = defineCollection({
     image: z.string().optional(),
     metric: z.string().optional(),
     metricLabel: z.string().optional(),
-    category: z.enum(['research', 'ml-ai', 'full-stack', 'devops', 'open-source']),
+    category: z.enum(['ml-ai', 'full-stack', 'mobile', 'data-science']),
   }),
 });
 

@@ -5,9 +5,9 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description = "Software Engineer building and deploying AI/ML production systems at scale", ogImage } = Astro.props;
+const { title, description = "Computer Science graduate student at NYU specializing in Artificial Intelligence", ogImage } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const siteName = "Dhairya Mishra";
+const siteName = "Nikhila Sundar";
 ---
 
 <!doctype html>
@@ -42,16 +42,16 @@ const siteName = "Dhairya Mishra";
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Dhairya Mishra",
+      "name": "Nikhila Sundar",
       "url": canonicalURL.origin,
-      "jobTitle": "Software Engineer",
+      "jobTitle": "Software Developer",
       "alumniOf": [
-        { "@type": "CollegeOrUniversity", "name": "New York University - Courant" },
-        { "@type": "CollegeOrUniversity", "name": "Trine University" }
+        { "@type": "CollegeOrUniversity", "name": "New York University" },
+        { "@type": "CollegeOrUniversity", "name": "Rutgers University - New Brunswick" }
       ],
       "sameAs": [
-        "https://linkedin.com/in/dhairya-mishra/",
-        "https://github.com/dhairyamishra"
+        "https://linkedin.com/in/nikhilasundar",
+        "https://github.com/nikhilasundar"
       ]
     })} />
     

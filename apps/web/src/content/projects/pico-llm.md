@@ -1,36 +1,30 @@
 ---
-title: "PICO-LLM Research Pipeline"
-description: "Modular LLM research pipeline for training and evaluating K-Gram MLP, LSTM, and KV-cache Transformer architectures with 22+ experiment configs."
+title: "Pico LLM"
+description: "PyTorch pipeline for K-gram MLPs, LSTMs, and Transformers with KV cache, structured logging, and automated analysis."
 date: "2025-04"
-tags: ["PyTorch", "LLM", "Transformers", "LSTM", "Research"]
-featured: false
-category: "research"
-github: "https://github.com/dhairyamishra"
-metric: "73.21%"
-metricLabel: "Token Accuracy"
+tags: ["PyTorch", "LLM", "Transformers", "LSTM", "KV Cache", "Machine Learning"]
+featured: true
+category: "ml-ai"
+github: "https://github.com/nikhilasundar"
+metric: "3"
+metricLabel: "Model Architectures"
 ---
 
 ## Overview
 
-A modular research pipeline for training and evaluating small-scale language model architectures. The pipeline supports K-Gram MLP, LSTM, and KV-cache Transformer models with systematic cross-run analysis across 22+ experiment configurations.
-
-## Best Results (KV-Cache Transformer)
-
-| Metric | Score |
-|--------|-------|
-| Validation Loss | **1.665** |
-| Perplexity | **6.389** |
-| Token Accuracy | **73.21%** |
+Built a PyTorch pipeline with a team for training and evaluating K-gram MLPs, LSTMs, and Transformers (with KV cache). Features structured logging for loss, accuracy, and perplexity metrics, along with automated analysis generating reports and heatmaps.
 
 ## Key Features
 
-- **Multi-Architecture Support**: K-Gram MLP, LSTM, and KV-cache Transformer training loops
-- **22+ Experiment Configs**: Systematic hyperparameter sweeps and architecture comparisons
-- **Cross-Run Analysis**: Automated comparison and visualization across experiment runs
-- **Reproducible**: Deterministic seeding and config-driven experimentation
+- **Multi-Architecture Support**: K-gram MLP, LSTM, and Transformer training loops with KV cache optimization
+- **Structured Logging**: Comprehensive tracking of loss, accuracy, and perplexity across experiments
+- **Automated Analysis**: Generation of reports and heatmaps for cross-run comparison
+- **Reproducible Pipeline**: Config-driven experimentation for consistent results
 
 ## Tech Stack
 
-- **ML**: PyTorch, custom Transformer implementation with KV-cache
-- **Experiment Tracking**: Weights & Biases (wandb)
-- **Analysis**: NumPy, Pandas, Matplotlib
+- **ML Framework**: PyTorch
+- **Architectures**: K-gram MLP, LSTM, Transformer (KV Cache)
+- **Analysis**: Automated report generation, heatmap visualization
+
+<!-- [PLACEHOLDER] Add GitHub repo URL and specific results/metrics when available -->
