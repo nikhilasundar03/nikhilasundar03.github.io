@@ -70,59 +70,76 @@
 }
 
 @layer components {
+  /* Opacity + custom colors cannot be used with @apply (Tailwind limitation). */
+
   .btn-neon {
     @apply relative px-6 py-3 rounded-2xl font-medium font-heading tracking-wide;
-    @apply border border-neon-rose/45 text-neon-rose;
-    @apply hover:border-neon-rose hover:shadow-neon-md;
-    @apply transition-all duration-300 ease-out;
-    @apply active:scale-95;
+    @apply border text-neon-rose transition-all duration-300 ease-out active:scale-95;
+    border-color: rgb(45 212 191 / 0.45);
+  }
+
+  .btn-neon:hover {
+    @apply border-neon-rose shadow-neon-md;
   }
 
   .btn-neon-fill {
     @apply relative px-6 py-3 rounded-2xl font-medium font-heading tracking-wide;
-    @apply bg-gradient-to-r from-neon-rose/35 to-neon-violet/30;
-    @apply border border-neon-rose/55 text-text-bright;
-    @apply hover:from-neon-rose/50 hover:to-neon-violet/45;
-    @apply hover:border-neon-rose hover:shadow-neon-md;
-    @apply transition-all duration-300 ease-out;
-    @apply active:scale-95;
+    @apply border text-text-bright transition-all duration-300 ease-out active:scale-95;
+    background-image: linear-gradient(to right, rgb(45 212 191 / 0.35), rgb(129 140 248 / 0.3));
+    border-color: rgb(45 212 191 / 0.55);
+  }
+
+  .btn-neon-fill:hover {
+    background-image: linear-gradient(to right, rgb(45 212 191 / 0.5), rgb(129 140 248 / 0.45));
+    @apply border-neon-rose shadow-neon-md;
   }
 
   .btn-neon-gold {
     @apply relative px-6 py-3 rounded-2xl font-medium font-heading tracking-wide;
-    @apply border border-neon-gold/45 text-neon-gold;
-    @apply hover:border-neon-gold hover:shadow-neon-gold-md;
-    @apply transition-all duration-300 ease-out;
-    @apply active:scale-95;
+    @apply border text-neon-gold transition-all duration-300 ease-out active:scale-95;
+    border-color: rgb(251 191 36 / 0.45);
+  }
+
+  .btn-neon-gold:hover {
+    @apply border-neon-gold shadow-neon-gold-md;
   }
 
   .card-neon {
-    @apply relative rounded-2xl p-6;
-    @apply bg-surface/85 backdrop-blur-md;
-    @apply border border-white/[0.06];
-    @apply hover:border-neon-rose/25 hover:shadow-neon-sm;
-    @apply transition-all duration-300 ease-out;
+    @apply relative rounded-2xl p-6 backdrop-blur-md border transition-all duration-300 ease-out;
+    background-color: rgb(18 26 46 / 0.85);
+    border-color: rgb(255 255 255 / 0.06);
+  }
+
+  .card-neon:hover {
+    border-color: rgb(45 212 191 / 0.25);
+    @apply shadow-neon-sm;
   }
 
   .card-neon-interactive {
-    @apply card-neon;
-    @apply hover:bg-surface-light/90 hover:-translate-y-1;
-    @apply cursor-pointer;
+    @apply card-neon cursor-pointer;
+  }
+
+  .card-neon-interactive:hover {
+    background-color: rgb(24 34 54 / 0.9);
+    @apply -translate-y-1;
   }
 
   .badge-neon {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
-    @apply bg-neon-rose/12 text-neon-rose border border-neon-rose/25;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-neon-rose;
+    background-color: rgb(45 212 191 / 0.12);
+    border: 1px solid rgb(45 212 191 / 0.25);
   }
 
   .badge-neon-violet {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
-    @apply bg-neon-violet/12 text-neon-violet border border-neon-violet/25;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-neon-violet;
+    background-color: rgb(129 140 248 / 0.12);
+    border: 1px solid rgb(129 140 248 / 0.25);
   }
 
   .badge-neon-gold {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
-    @apply bg-neon-gold/12 text-neon-gold border border-neon-gold/25;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-neon-gold;
+    background-color: rgb(251 191 36 / 0.12);
+    border: 1px solid rgb(251 191 36 / 0.25);
   }
 
   .divider-neon {
@@ -140,10 +157,14 @@
   }
 
   .link-neon {
-    @apply text-neon-rose/85 hover:text-neon-rose;
-    @apply underline decoration-neon-rose/25 underline-offset-4;
-    @apply hover:decoration-neon-rose/55;
-    @apply transition-all duration-200;
+    @apply underline underline-offset-4 transition-all duration-200;
+    color: rgb(45 212 191 / 0.85);
+    text-decoration-color: rgb(45 212 191 / 0.25);
+  }
+
+  .link-neon:hover {
+    @apply text-neon-rose;
+    text-decoration-color: rgb(45 212 191 / 0.55);
   }
 
   .text-gradient-neon {

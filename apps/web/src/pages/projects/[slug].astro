@@ -146,7 +146,8 @@ const categoryLabels: Record<string, string> = {
   }
   .prose-neon li::before {
     content: '';
-    @apply absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-neon-rose/50;
+    @apply absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full;
+    background-color: rgb(45 212 191 / 0.5);
   }
   .prose-neon ol {
     @apply space-y-2 mb-6 list-decimal list-inside;
@@ -161,13 +162,21 @@ const categoryLabels: Record<string, string> = {
     @apply text-text-bright font-semibold;
   }
   .prose-neon a {
-    @apply text-neon-rose/80 hover:text-neon-rose underline decoration-neon-rose/20 underline-offset-4 hover:decoration-neon-rose/60 transition-all;
+    @apply underline underline-offset-4 transition-all;
+    color: rgb(45 212 191 / 0.8);
+    text-decoration-color: rgb(45 212 191 / 0.2);
+  }
+  .prose-neon a:hover {
+    @apply text-neon-rose;
+    text-decoration-color: rgb(45 212 191 / 0.6);
   }
   .prose-neon code {
-    @apply text-neon-gold bg-neon-gold/10 px-1.5 py-0.5 rounded text-xs font-mono;
+    @apply text-neon-gold px-1.5 py-0.5 rounded text-xs font-mono;
+    background-color: rgb(251 191 36 / 0.1);
   }
   .prose-neon pre {
-    @apply bg-surface border border-white/5 rounded-lg p-4 mb-6 overflow-x-auto;
+    @apply bg-surface rounded-lg p-4 mb-6 overflow-x-auto border;
+    border-color: rgb(255 255 255 / 0.05);
   }
   .prose-neon pre code {
     @apply bg-transparent text-text p-0;
@@ -176,15 +185,20 @@ const categoryLabels: Record<string, string> = {
     @apply w-full mb-6 text-sm;
   }
   .prose-neon thead th {
-    @apply text-left text-neon-rose/80 font-heading font-semibold py-2 px-3 border-b border-white/10;
+    @apply text-left font-heading font-semibold py-2 px-3 border-b;
+    color: rgb(45 212 191 / 0.8);
+    border-bottom-color: rgb(255 255 255 / 0.1);
   }
   .prose-neon tbody td {
-    @apply py-2 px-3 text-muted-light border-b border-white/5;
+    @apply py-2 px-3 text-muted-light border-b;
+    border-bottom-color: rgb(255 255 255 / 0.05);
   }
   .prose-neon hr {
-    @apply border-white/5 my-8;
+    @apply my-8 border-0;
+    border-top: 1px solid rgb(255 255 255 / 0.05);
   }
   .prose-neon blockquote {
-    @apply border-l-2 border-neon-rose/30 pl-4 italic text-muted my-4;
+    @apply border-l-2 pl-4 italic text-muted my-4;
+    border-left-color: rgb(45 212 191 / 0.3);
   }
 </style>
