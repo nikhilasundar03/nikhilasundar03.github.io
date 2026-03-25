@@ -22,28 +22,44 @@ const companyBrand: Record<string, string> = {
 <Layout title="About — Nikhila Sundar" description="Computer Science M.S. student at NYU specializing in AI. Rutgers CS graduate with experience in software engineering and data science.">
   <Navigation />
 
-  <main id="main-content" class="pb-8">
-    <section class="section-container pt-12 md:pt-16 pb-16 md:pb-24">
-      <p class="page-eyebrow">About</p>
-      <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-semibold text-text leading-tight max-w-3xl">
-        CS graduate student & software developer
-      </h1>
-      <div class="mt-10 max-w-2xl space-y-5 text-lg text-muted leading-relaxed">
-        <p>
-          Computer Science M.S. student at <span class="text-neon-rose font-semibold">New York University</span> with a concentration in Artificial Intelligence. Rutgers B.S. CS graduate with experience in Java, Python, AI/ML, Spring Boot, AWS, and Android.
-        </p>
-        <p>
-          Winner of the Rutgers Data Science Club Fall 2023 Datathon (most advanced algorithm). Recipient of the <span class="text-neon-rose font-semibold">NCWIT Award for Aspirations in Computing</span> — Certificate of Distinction.
-        </p>
+  <main id="main-content">
+    <section class="section-container pt-10 pb-16 md:pt-14 md:pb-24">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-end">
+        <div class="lg:col-span-7">
+          <p class="page-eyebrow">About</p>
+          <h1 class="font-heading text-[clamp(2.75rem,8vw,5.5rem)] font-medium leading-[0.95] tracking-tight text-text">
+            <span class="block">CS graduate</span>
+            <span class="block text-neon-rose">student & developer</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:border-l lg:border-base-300 lg:pl-10 space-y-6">
+          <div class="space-y-5 text-lg text-muted leading-relaxed">
+            <p>
+              Computer Science M.S. student at <strong class="font-semibold text-text">New York University</strong> (AI concentration). Rutgers B.S. CS graduate — Java, Python, AI/ML, Spring Boot, AWS, Android.
+            </p>
+            <p>
+              Datathon winner (Rutgers Data Science Club, Fall 2023). <span class="text-neon-rose font-semibold">NCWIT Award for Aspirations in Computing</span> — Certificate of Distinction.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="/projects" class="btn-neon-fill">View work</a>
+            <a href="/contact" class="btn-neon">Contact</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <div class="divider-neon-animated"></div>
 
     <section class="section-container py-20 md:py-28">
-      <div class="mb-12 max-w-xl">
-        <p class="page-eyebrow">Work</p>
-        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">Experience</h2>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <p class="page-eyebrow">Work</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">Experience</h2>
+        </div>
+        <p class="text-sm text-muted max-w-md md:text-right">
+          Internships, teaching, and engineering roles across education and industry.
+        </p>
       </div>
 
       <div class="relative max-w-3xl pl-6 md:pl-10 border-l-2 border-text/20">
@@ -84,9 +100,14 @@ const companyBrand: Record<string, string> = {
     <div class="divider-neon-animated"></div>
 
     <section class="section-container py-20 md:py-28">
-      <div class="mb-12 max-w-xl">
-        <p class="page-eyebrow">Recognition</p>
-        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">Achievements</h2>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <p class="page-eyebrow">Recognition</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">Achievements</h2>
+        </div>
+        <p class="text-sm text-muted max-w-md md:text-right">
+          Competitions, awards, and formal recognition.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-5 max-w-3xl">
@@ -116,9 +137,14 @@ const companyBrand: Record<string, string> = {
     <div class="divider-neon-animated"></div>
 
     <section class="section-container py-20 md:py-28">
-      <div class="mb-12 max-w-xl">
-        <p class="page-eyebrow">Toolkit</p>
-        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">Skills</h2>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <p class="page-eyebrow">Toolkit</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">Skills</h2>
+        </div>
+        <p class="text-sm text-muted max-w-md md:text-right">
+          Languages, ML, frameworks, cloud, and tools I use regularly.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl">
@@ -142,9 +168,14 @@ const companyBrand: Record<string, string> = {
     <div class="divider-neon-animated"></div>
 
     <section class="section-container py-20 md:py-28">
-      <div class="mb-12 max-w-xl">
-        <p class="page-eyebrow">Study</p>
-        <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">Education</h2>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <p class="page-eyebrow">Study</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">Education</h2>
+        </div>
+        <p class="text-sm text-muted max-w-md md:text-right">
+          Graduate and undergraduate CS programs.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-5 max-w-3xl">

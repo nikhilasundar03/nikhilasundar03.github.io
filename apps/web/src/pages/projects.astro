@@ -23,18 +23,41 @@ const categoryLabels: Record<string, string> = {
   <Navigation />
 
   <main id="main-content">
-    <section class="section-container py-12 md:py-16">
-      <div class="max-w-2xl mb-12">
-        <p class="page-eyebrow">Archive</p>
-        <h1 class="font-heading text-4xl md:text-5xl font-semibold text-text leading-tight mb-4">
-          Projects
-        </h1>
-        <p class="text-muted leading-relaxed">
-          Coursework and personal work across AI/ML, data, full-stack, and mobile.
+    <section class="section-container pt-10 pb-16 md:pt-14 md:pb-24">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-end">
+        <div class="lg:col-span-7">
+          <p class="page-eyebrow">Archive</p>
+          <h1 class="font-heading text-[clamp(2.75rem,8vw,5.5rem)] font-medium leading-[0.95] tracking-tight text-text">
+            <span class="block">Project</span>
+            <span class="block text-neon-rose">library</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-5 lg:border-l lg:border-base-300 lg:pl-10 space-y-6">
+          <p class="text-lg text-muted leading-relaxed">
+            Coursework and personal work across <strong class="font-semibold text-text">AI/ML</strong>, data, full-stack, and mobile — with filters by category below.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="/" class="btn-neon">Home</a>
+            <a href="/contact" class="btn-neon-fill">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider-neon-animated"></div>
+
+    <section class="section-container pb-20 md:pb-28 pt-14 md:pt-20">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+        <div>
+          <p class="page-eyebrow">Browse</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-semibold text-text">All projects</h2>
+        </div>
+        <p class="text-sm text-muted max-w-md md:text-right">
+          Use the tags to narrow the list. Each row opens the full write-up.
         </p>
       </div>
 
-      <div class="flex flex-wrap gap-2 mb-12" id="filter-bar" role="tablist" aria-label="Filter by category">
+      <div class="flex flex-wrap gap-2 mb-10" id="filter-bar" role="tablist" aria-label="Filter by category">
         {categories.map((cat) => (
           <button
             type="button"
