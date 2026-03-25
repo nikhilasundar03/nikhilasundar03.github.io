@@ -35,9 +35,9 @@ const categoryLabels: Record<string, string> = {
   <main id="main-content" class="py-20 md:py-28">
     <article class="section-container">
       <!-- Back link -->
-      <a href="/projects" class="inline-flex items-center text-sm text-muted hover:text-neon-rose transition-colors mb-8 font-mono">
-        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg>
-        Back to Projects
+      <a href="/projects" class="inline-flex items-center text-sm font-mono uppercase tracking-wider text-muted hover:text-text mb-10">
+        <span class="mr-2" aria-hidden="true">←</span>
+        All projects
       </a>
 
       <!-- Header -->
@@ -50,11 +50,11 @@ const categoryLabels: Record<string, string> = {
           )}
         </div>
         
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-text-bright">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-semibold mb-4 text-text leading-tight">
           {project.data.title}
         </h1>
         
-        <p class="text-lg text-muted-light leading-relaxed mb-6">
+        <p class="text-lg text-muted leading-relaxed mb-6">
           {project.data.description}
         </p>
 
@@ -107,16 +107,15 @@ const categoryLabels: Record<string, string> = {
       {related.length > 0 && (
         <div class="mt-20">
           <div class="divider-neon-animated mb-12"></div>
-          <h2 class="text-2xl font-heading font-bold mb-8 text-center">
-            Related <span class="text-gradient-rose">Projects</span>
+          <h2 class="text-2xl font-heading font-semibold mb-8 text-text">
+            Related work
           </h2>
-          <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-5 max-w-3xl">
             {related.map(rel => (
-              <a href={`/projects/${rel.slug}`} class="group card-neon-interactive flex flex-col">
-                <div class="h-1 w-full rounded-t-xl bg-gradient-to-r from-neon-rose via-neon-violet to-neon-gold mb-3 opacity-40 group-hover:opacity-100 transition-opacity"></div>
-                <span class="badge-neon text-[10px] w-fit mb-2">{categoryLabels[rel.data.category] || rel.data.category}</span>
-                <h3 class="text-base font-heading font-semibold text-text-bright group-hover:text-neon-rose transition-colors mb-1">{rel.data.title}</h3>
-                <p class="text-xs text-muted leading-relaxed">{rel.data.description}</p>
+              <a href={`/projects/${rel.slug}`} class="group card-neon-interactive flex flex-col gap-2">
+                <span class="badge-neon w-fit">{categoryLabels[rel.data.category] || rel.data.category}</span>
+                <h3 class="text-lg font-heading font-semibold text-text group-hover:text-neon-rose transition-colors">{rel.data.title}</h3>
+                <p class="text-sm text-muted leading-relaxed">{rel.data.description}</p>
               </a>
             ))}
           </div>
@@ -130,24 +129,24 @@ const categoryLabels: Record<string, string> = {
 
 <style is:global>
   .prose-neon h2 {
-    @apply text-2xl font-heading font-bold text-text-bright mt-10 mb-4;
+    @apply text-2xl font-heading font-semibold text-text mt-10 mb-4;
   }
   .prose-neon h3 {
-    @apply text-xl font-heading font-semibold text-text-bright mt-8 mb-3;
+    @apply text-xl font-heading font-semibold text-text mt-8 mb-3;
   }
   .prose-neon p {
-    @apply text-sm text-muted-light leading-relaxed mb-4;
+    @apply text-sm text-muted leading-relaxed mb-4;
   }
   .prose-neon ul {
     @apply space-y-2 mb-6;
   }
   .prose-neon li {
-    @apply text-sm text-muted-light leading-relaxed pl-4 relative;
+    @apply text-sm text-muted leading-relaxed pl-4 relative;
   }
   .prose-neon li::before {
     content: '';
     @apply absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full;
-    background-color: rgb(45 212 191 / 0.5);
+    background-color: rgb(159 45 32 / 0.45);
   }
   .prose-neon ol {
     @apply space-y-2 mb-6 list-decimal list-inside;
@@ -159,24 +158,23 @@ const categoryLabels: Record<string, string> = {
     content: none;
   }
   .prose-neon strong {
-    @apply text-text-bright font-semibold;
+    @apply text-text font-semibold;
   }
   .prose-neon a {
     @apply underline underline-offset-4 transition-all;
-    color: rgb(45 212 191 / 0.8);
-    text-decoration-color: rgb(45 212 191 / 0.2);
+    color: #9f2d20;
+    text-decoration-color: rgba(159, 45, 32, 0.35);
   }
   .prose-neon a:hover {
-    @apply text-neon-rose;
-    text-decoration-color: rgb(45 212 191 / 0.6);
+    color: #1c1917;
+    text-decoration-color: rgba(28, 25, 23, 0.4);
   }
   .prose-neon code {
-    @apply text-neon-gold px-1.5 py-0.5 rounded text-xs font-mono;
-    background-color: rgb(251 191 36 / 0.1);
+    @apply text-neon-violet px-1.5 py-0.5 rounded-sm text-xs font-mono;
+    background-color: rgba(30, 58, 95, 0.08);
   }
   .prose-neon pre {
-    @apply bg-surface rounded-lg p-4 mb-6 overflow-x-auto border;
-    border-color: rgb(255 255 255 / 0.05);
+    @apply bg-surface-light rounded-sm p-4 mb-6 overflow-x-auto border border-base-300;
   }
   .prose-neon pre code {
     @apply bg-transparent text-text p-0;
@@ -185,20 +183,19 @@ const categoryLabels: Record<string, string> = {
     @apply w-full mb-6 text-sm;
   }
   .prose-neon thead th {
-    @apply text-left font-heading font-semibold py-2 px-3 border-b;
-    color: rgb(45 212 191 / 0.8);
-    border-bottom-color: rgb(255 255 255 / 0.1);
+    @apply text-left font-heading font-semibold py-2 px-3 border-b text-text;
+    border-bottom-color: #d4cec4;
   }
   .prose-neon tbody td {
-    @apply py-2 px-3 text-muted-light border-b;
-    border-bottom-color: rgb(255 255 255 / 0.05);
+    @apply py-2 px-3 text-muted border-b;
+    border-bottom-color: #e2ddd4;
   }
   .prose-neon hr {
     @apply my-8 border-0;
-    border-top: 1px solid rgb(255 255 255 / 0.05);
+    border-top: 1px solid #d4cec4;
   }
   .prose-neon blockquote {
     @apply border-l-2 pl-4 italic text-muted my-4;
-    border-left-color: rgb(45 212 191 / 0.3);
+    border-left-color: rgba(159, 45, 32, 0.35);
   }
 </style>

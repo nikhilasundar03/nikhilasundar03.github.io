@@ -4,15 +4,15 @@
 
 @layer base {
   :root {
-    --neon-rose: #2dd4bf;
-    --neon-gold: #fbbf24;
-    --neon-violet: #818cf8;
-    --neon-lime: #34d399;
-    --bg-base: #0b1222;
-    --bg-surface: #121a2e;
-    --bg-surface-light: #182236;
-    --text-primary: #f1f5f9;
-    --text-muted: #94a3b8;
+    --neon-rose: #9f2d20;
+    --neon-gold: #6b5c3e;
+    --neon-violet: #1e3a5f;
+    --neon-lime: #2d4a3e;
+    --bg-base: #f4f1eb;
+    --bg-surface: #ffffff;
+    --bg-surface-light: #faf8f5;
+    --text-primary: #1c1917;
+    --text-muted: #78716c;
   }
 
   html {
@@ -20,35 +20,34 @@
   }
 
   body {
-    @apply bg-base text-text font-body;
+    @apply bg-base text-text font-body antialiased;
     background-image:
-      radial-gradient(ellipse at 15% 0%, rgba(45, 212, 191, 0.07) 0%, transparent 45%),
-      radial-gradient(ellipse at 85% 15%, rgba(129, 140, 248, 0.06) 0%, transparent 45%),
-      radial-gradient(ellipse at 50% 90%, rgba(251, 191, 36, 0.04) 0%, transparent 50%);
+      radial-gradient(ellipse at 20% 30%, rgba(159, 45, 32, 0.04) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 70%, rgba(30, 58, 95, 0.05) 0%, transparent 50%);
     background-attachment: fixed;
     min-height: 100vh;
   }
 
   ::selection {
-    background: rgba(45, 212, 191, 0.22);
-    color: #f8fafc;
+    background: rgba(159, 45, 32, 0.15);
+    color: #0c0a09;
   }
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #0b1222;
+    background: #ebe6de;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(45, 212, 191, 0.22);
-    border-radius: 3px;
+    background: rgba(28, 25, 23, 0.2);
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(45, 212, 191, 0.45);
+    background: rgba(28, 25, 23, 0.35);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -70,49 +69,54 @@
 }
 
 @layer components {
-  /* Opacity + custom colors cannot be used with @apply (Tailwind limitation). */
+  .page-eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-muted mb-4;
+  }
 
   .btn-neon {
-    @apply relative px-6 py-3 rounded-2xl font-medium font-heading tracking-wide;
-    @apply border text-neon-rose transition-all duration-300 ease-out active:scale-95;
-    border-color: rgb(45 212 191 / 0.45);
+    @apply relative inline-flex items-center justify-center px-5 py-2.5 font-mono text-sm uppercase tracking-wider;
+    @apply border-2 border-text text-text transition-all duration-200 active:scale-[0.98];
+    border-radius: 2px;
+    background: transparent;
   }
 
   .btn-neon:hover {
-    @apply border-neon-rose shadow-neon-md;
+    @apply bg-text text-surface shadow-neon-sm;
   }
 
   .btn-neon-fill {
-    @apply relative px-6 py-3 rounded-2xl font-medium font-heading tracking-wide;
-    @apply border text-text-bright transition-all duration-300 ease-out active:scale-95;
-    background-image: linear-gradient(to right, rgb(45 212 191 / 0.35), rgb(129 140 248 / 0.3));
-    border-color: rgb(45 212 191 / 0.55);
+    @apply relative inline-flex items-center justify-center px-5 py-2.5 font-mono text-sm uppercase tracking-wider text-surface;
+    @apply border-2 border-text transition-all duration-200 active:scale-[0.98];
+    border-radius: 2px;
+    background-color: #1c1917;
   }
 
   .btn-neon-fill:hover {
-    background-image: linear-gradient(to right, rgb(45 212 191 / 0.5), rgb(129 140 248 / 0.45));
-    @apply border-neon-rose shadow-neon-md;
+    background-color: #9f2d20;
+    border-color: #9f2d20;
+    @apply shadow-neon-md;
   }
 
   .btn-neon-gold {
-    @apply relative px-6 py-3 rounded-2xl font-medium font-heading tracking-wide;
-    @apply border text-neon-gold transition-all duration-300 ease-out active:scale-95;
-    border-color: rgb(251 191 36 / 0.45);
+    @apply relative inline-flex items-center justify-center px-5 py-2.5 font-mono text-sm uppercase tracking-wider;
+    @apply border-2 border-neon-gold text-neon-gold transition-all duration-200 active:scale-[0.98];
+    border-radius: 2px;
+    background: transparent;
   }
 
   .btn-neon-gold:hover {
-    @apply border-neon-gold shadow-neon-gold-md;
+    @apply bg-neon-gold text-surface;
   }
 
   .card-neon {
-    @apply relative rounded-2xl p-6 backdrop-blur-md border transition-all duration-300 ease-out;
-    background-color: rgb(18 26 46 / 0.85);
-    border-color: rgb(255 255 255 / 0.06);
+    @apply relative border border-base-300 bg-surface p-6 transition-all duration-300;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 rgba(28, 25, 23, 0.04);
   }
 
   .card-neon:hover {
-    border-color: rgb(45 212 191 / 0.25);
-    @apply shadow-neon-sm;
+    border-color: #a8a095;
+    box-shadow: 0 12px 40px rgba(28, 25, 23, 0.06);
   }
 
   .card-neon-interactive {
@@ -120,108 +124,114 @@
   }
 
   .card-neon-interactive:hover {
-    background-color: rgb(24 34 54 / 0.9);
-    @apply -translate-y-1;
+    @apply -translate-y-0.5;
   }
 
   .badge-neon {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-neon-rose;
-    background-color: rgb(45 212 191 / 0.12);
-    border: 1px solid rgb(45 212 191 / 0.25);
+    @apply inline-flex items-center font-mono text-[10px] uppercase tracking-wider text-neon-rose;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    border: 1px solid rgba(159, 45, 32, 0.35);
+    background: rgba(159, 45, 32, 0.06);
   }
 
   .badge-neon-violet {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-neon-violet;
-    background-color: rgb(129 140 248 / 0.12);
-    border: 1px solid rgb(129 140 248 / 0.25);
+    @apply inline-flex items-center font-mono text-[10px] uppercase tracking-wider text-neon-violet;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    border: 1px solid rgba(30, 58, 95, 0.35);
+    background: rgba(30, 58, 95, 0.06);
   }
 
   .badge-neon-gold {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-neon-gold;
-    background-color: rgb(251 191 36 / 0.12);
-    border: 1px solid rgb(251 191 36 / 0.25);
+    @apply inline-flex items-center font-mono text-[10px] uppercase tracking-wider text-neon-gold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    border: 1px solid rgba(107, 92, 62, 0.4);
+    background: rgba(107, 92, 62, 0.08);
   }
 
   .divider-neon {
-    @apply w-full h-px;
-    background: linear-gradient(90deg, transparent, var(--neon-rose), transparent);
-    opacity: 0.35;
+    @apply w-full;
+    height: 1px;
+    background: #d4cec4;
   }
 
   .divider-neon-animated {
-    @apply w-full h-px;
-    background: linear-gradient(90deg, transparent, var(--neon-rose), var(--neon-violet), transparent);
-    background-size: 200% 100%;
-    animation: thread-flow 3s linear infinite;
-    opacity: 0.45;
+    @apply w-full;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4cec4 20%, #d4cec4 80%, transparent);
   }
 
   .link-neon {
-    @apply underline underline-offset-4 transition-all duration-200;
-    color: rgb(45 212 191 / 0.85);
-    text-decoration-color: rgb(45 212 191 / 0.25);
+    @apply underline underline-offset-[5px] transition-all duration-200;
+    color: #9f2d20;
+    text-decoration-color: rgba(159, 45, 32, 0.35);
   }
 
   .link-neon:hover {
-    @apply text-neon-rose;
-    text-decoration-color: rgb(45 212 191 / 0.55);
+    color: #1c1917;
+    text-decoration-color: rgba(28, 25, 23, 0.5);
   }
 
   .text-gradient-neon {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #2dd4bf, #818cf8, #fbbf24);
+    @apply text-neon-rose;
   }
 
   .text-gradient-rose {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #2dd4bf, #818cf8);
+    color: #1e3a5f;
   }
 
   .section-container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-10;
+    @apply max-w-5xl mx-auto px-5 sm:px-8 lg:px-10;
   }
 
   .neon-glow-text {
-    text-shadow: 0 0 12px rgba(45, 212, 191, 0.35), 0 0 42px rgba(129, 140, 248, 0.15);
+    text-shadow: none;
   }
 
   .grid-bg {
-    background-image:
-      linear-gradient(rgba(45, 212, 191, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(45, 212, 191, 0.035) 1px, transparent 1px);
-    background-size: 48px 48px;
+    opacity: 0.35;
+    background-image: radial-gradient(circle, rgba(28, 25, 23, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   .brand-logo {
-    opacity: 0.78;
-    filter: saturate(0.85);
-    transition: all 0.3s ease-out;
+    opacity: 0.88;
+    filter: saturate(0.95);
+    transition: opacity 0.2s ease-out;
   }
 
   .brand-logo:hover,
   .group:hover .brand-logo,
   .brand-strip-item:hover .brand-logo {
     opacity: 1;
-    filter: saturate(1);
   }
 
   .brand-strip {
-    @apply flex items-center justify-center gap-8 md:gap-12 flex-wrap;
+    @apply flex flex-wrap items-center justify-center gap-10 md:gap-16;
   }
 
   .brand-strip-item {
     @apply flex flex-col items-center gap-2;
-    @apply transition-transform duration-300 ease-out;
   }
 
-  .brand-strip-item:hover {
-    transform: scale(1.08);
+  .filter-btn {
+    @apply px-4 py-2 font-mono text-[11px] uppercase tracking-wider border border-base-300 rounded-sm text-muted transition-colors duration-200 bg-surface;
+  }
+
+  .filter-btn:hover {
+    @apply border-text text-text;
+  }
+
+  .filter-btn.is-active {
+    @apply bg-text text-surface border-text;
   }
 
   .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(16px);
+    transition: opacity 0.55s ease-out, transform 0.55s ease-out;
   }
 
   .reveal.visible {
@@ -229,9 +239,9 @@
     transform: translateY(0);
   }
 
-  .reveal-delay-1 { transition-delay: 0.1s; }
-  .reveal-delay-2 { transition-delay: 0.2s; }
-  .reveal-delay-3 { transition-delay: 0.3s; }
-  .reveal-delay-4 { transition-delay: 0.4s; }
-  .reveal-delay-5 { transition-delay: 0.5s; }
+  .reveal-delay-1 { transition-delay: 0.08s; }
+  .reveal-delay-2 { transition-delay: 0.16s; }
+  .reveal-delay-3 { transition-delay: 0.24s; }
+  .reveal-delay-4 { transition-delay: 0.32s; }
+  .reveal-delay-5 { transition-delay: 0.4s; }
 }

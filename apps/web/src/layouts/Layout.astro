@@ -11,34 +11,30 @@ const siteName = "Nikhila Sundar";
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#0b1222" />
-    
-    <!-- SEO -->
+    <meta name="theme-color" content="#f4f1eb" />
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
-    
-    <!-- Open Graph -->
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={siteName} />
     {ogImage && <meta property="og:image" content={ogImage} />}
-    
-    <!-- Twitter Card -->
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {ogImage && <meta name="twitter:image" content={ogImage} />}
-    
-    <!-- Structured Data -->
+
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
@@ -54,19 +50,17 @@ const siteName = "Nikhila Sundar";
         "https://github.com/nikhilasundar"
       ]
     })} />
-    
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   </head>
-  <body class="font-body antialiased">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-surface focus:text-neon-rose focus:rounded-2xl focus:border focus:border-neon-rose/40">
+  <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-text focus:text-surface focus:font-mono focus:text-sm focus:rounded-sm focus:outline-none focus:ring-2 focus:ring-neon-rose">
       Skip to content
     </a>
     <slot />
 
-    <!-- Scroll reveal observer -->
     <script>
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -74,7 +68,7 @@ const siteName = "Nikhila Sundar";
             entry.target.classList.add('visible');
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 

@@ -19,7 +19,7 @@ export const education: Education[] = [
     date: 'Dec 2026',
     coursework: ['Algorithms', 'Machine Learning', 'Computer Vision'],
     brand: 'nyu',
-    brandBgClass: 'bg-neon-violet/10 border-neon-violet/20',
+    brandBgClass: 'bg-surface-light',
   },
   {
     institution: 'Rutgers University - New Brunswick',
@@ -28,6 +28,6 @@ export const education: Education[] = [
     coursework: ['Data Structures', 'Software Methodology', 'Algorithms'],
     activities: ['Data Science Club', 'Sangam (South Indian Club)', 'Rewriting the Code (RTC)'],
     brand: 'rutgers',
-    brandBgClass: 'bg-neon-rose/10 border-neon-rose/20',
+    brandBgClass: 'bg-surface-light',
   },
 ];
