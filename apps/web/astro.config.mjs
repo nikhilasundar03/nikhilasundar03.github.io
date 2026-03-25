@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://nikhilasundar03.github.io',
+  site: 'https://nikhilasundar.github.io',
   base: '/nikhilasundar.github.io',
   output: 'static',
   integrations: [react(), tailwind(), sitemap()],
