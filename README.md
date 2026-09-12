@@ -1,8 +1,8 @@
-# nikhilasundar.github.io
+# nikhilasundar03.github.io
 
 Personal portfolio website for **Nikhila Sundar** — fully static, hosted on GitHub Pages.
 
-**Live:** [nikhilasundar.github.io](https://nikhilasundar.github.io)
+**Live:** [nikhilasundar03.github.io](https://nikhilasundar03.github.io/)
 
 ## About
 
@@ -99,7 +99,7 @@ Workflow: `.github/workflows/deploy.yml`
 ## Setup Notes
 
 - **Web3Forms:** Replace `YOUR_WEB3FORMS_ACCESS_KEY` in `ContactForm.tsx` with your key from [web3forms.com](https://web3forms.com)
-- **GitHub Pages:** Repo must be named `nikhilasundar.github.io` and Pages source set to "GitHub Actions" in repo settings
+- **GitHub Pages:** Repo name must be **`nikhilasundar03.github.io`** (matches GitHub username) for the site at `https://nikhilasundar03.github.io/`. Pages source: **GitHub Actions** in repo settings.
 
 ## Contact
 

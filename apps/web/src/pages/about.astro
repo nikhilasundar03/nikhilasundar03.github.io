@@ -12,6 +12,7 @@ const allExperience = await getCollection('experience');
 const experience = allExperience.sort((a, b) => a.data.order - b.data.order);
 
 const companyBrand: Record<string, string> = {
+  'Vantage': 'vantage',
   'Rutgers University': 'rutgers',
   'Fiserv': 'fiserv',
   'East Consultancy Services': 'eastconsultancy',
